@@ -12,3 +12,4 @@ norfair[metrics,video]
 kivy
 pycocotools
 opencv-python
+scikit-image

@@ -1,0 +1,14 @@
+tensorflow==1.9.0
+keras==2.1.6
+pillow
+requests
+numpy
+pandas
+matplotlib
+seaborn
+graphviz
+Cython
+norfair[metrics,video]
+kivy
+pycocotools
+opencv-python

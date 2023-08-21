@@ -13,3 +13,4 @@ kivy
 pycocotools
 opencv-python
 scikit-image
+ipython

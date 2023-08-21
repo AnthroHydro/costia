@@ -1,3 +1,13 @@
+########################################
+#
+# Authors: Wesley Garnes, Ellen O'Brien, Rhea Roxy, Blaise Trapani
+# first written 2022
+# v1.5
+# Last updated 8.21.2023
+# Install instructions: https://github.com/AnthroHydro/costia/wiki
+#
+########################################
+
 import os
 import time
 

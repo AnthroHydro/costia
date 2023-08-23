@@ -62,9 +62,8 @@ def norftrack(res, class_list):
 
         centroid = np.array([xc, yc])
         scores = np.array([res['scores'][x]])
-        # label=np.array(class_list[res['class_ids'][x]])
         norftection.append(Detection(points=centroid, scores=scores))
-        # norftection.append(Detection(points=centroid, scores=scores, label=label))
+
 
     return norftection
 
@@ -271,15 +270,6 @@ class ProgressScreen(Screen):
         t1 = threading.Thread(target=self.vid_process)
         t1.start()
 
-    def vid2arr(self, vid, count):
-        """
-        Converts the video into an array of frames
-
-        Parameters:
-            vid (String) : path to the user's input video
-            count : the frame # to start out on
-        """
-
     def loadVid(self, inputVid):
         """
         Converts the video into an array of frames
@@ -443,13 +433,9 @@ class ProgressScreen(Screen):
                         print(item)
                         item_class = obj_class[x]  # item's corresponding class id
                         print(obj_class)
-                        # if ((line+15)>item.estimate[0][1]>(line-15)): #if an object is within range of the line
                         setlist[0].add(item.id)  # add the item to the list of counted items
-                        # print("item", item.id, "detected",dataset.class_names[item_class])
                         print("item", item.id, "detected")
-                        # setlist[item_class].add(item.id) #add the item id to its class's corresponding set
                         x += 1
-                        # print(item.last_detection.points[0][0])
 
                         if (item.id == 2):
                             objdet = True
@@ -498,7 +484,6 @@ class ProgressScreen(Screen):
                     print("straws", straws)
                     print("total", totalitems)
                 frame = path.draw(vid_img, tracked)
-                # orimage=cv.line(orimage, (0,line), (2000, line), (255, 0, 0), 6)
                 frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
                 # debugging tool
                 save_dir = (save_path + "/" + str(frame_counter).rjust(5, '0') + ".png")

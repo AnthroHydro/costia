@@ -84,7 +84,6 @@ def norftrack2(res, labels):
 
 
 def euc_distance(detection, tracked_obj):
-    # print(tracked_obj.estimate)
     return np.linalg.norm(detection.points - tracked_obj.estimate)
 
 
@@ -92,8 +91,6 @@ def key_distance(detection, tracked_obj):
     box1 = np.concatenate([detection.points[0], detection.points[1]])
     box2 = np.concatenate([tracked_obj.estimate[0], tracked_obj.estimate[1]])
 
-    # print(box1)
-    # print(box2)
     ya = max(box1[0], box2[0])
     xa = max(box1[1], box2[1])
     yb = max(box1[2], box2[2])

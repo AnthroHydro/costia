@@ -14,5 +14,6 @@ pycocotools
 opencv-python==4.3.0.38
 scikit-image
 ipython
+yolov5
 sahi
 torch

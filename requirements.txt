@@ -8,7 +8,7 @@ matplotlib
 seaborn
 graphviz
 Cython
-norfair[metrics,video]
+norfair
 kivy
 pycocotools
 opencv-python==4.3.0.38

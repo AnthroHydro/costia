@@ -11,6 +11,7 @@ Cython
 norfair[metrics,video]
 kivy
 pycocotools
-opencv-python
+opencv-python==4.3.0.38
 scikit-image
 ipython
+sahi

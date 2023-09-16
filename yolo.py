@@ -35,13 +35,13 @@ class YOLO:
         Description:
             runs the input frame through an inference pass on the class's model
         Parameters:
-            frame (String)  : video frame to be processed and tracked
-            slice (bool)    : whether the frame should be sliced via sahi for
-                              processing (note that this increases accuracy for
-                              detecting small objects, but increases inference time)
+            frame (String)      : video frame to be processed and tracked
+            slice (bool)        : whether the frame should be sliced via sahi for
+                                  processing (note that this increases accuracy for
+                                  detecting small objects, but increases inference time)
         Returns:
-            List[Detections]: list of norfair Detection objects for the results of
-                              running the model on the input frame
+            List[Detections]    : list of norfair Detection objects for the results of
+                                  running the model on the input frame
         """
         if slice:
             results = get_sliced_prediction(

@@ -1,8 +1,9 @@
-tensorflow==1.15.0
-keras==2.1.6
+--extra-index-url https://download.pytorch.org/whl/cu117
+numpy
+tensorflow
+keras
 pillow
 requests
-numpy
 pandas
 matplotlib
 seaborn
@@ -11,10 +12,9 @@ Cython
 norfair
 kivy
 pycocotools
-opencv-python==4.3.0.38
+opencv-python
 scikit-image
 ipython
-yolov5
 sahi
-torch
+yolov5
 packaging

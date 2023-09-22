@@ -14,7 +14,7 @@ import time
 import numpy as np
 import cv2 as cv
 
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array
 
 import detector.visualize as visualize
 

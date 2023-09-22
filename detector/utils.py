@@ -16,7 +16,7 @@ import os
 import math
 import random
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import scipy
 import skimage.color
 import skimage.io
@@ -759,7 +759,7 @@ def minimize_mask(bbox, mask, mini_shape):
             raise Exception("Invalid bounding box with area of zero")
         # Resize with bilinear interpolation
         m = skimage.transform.resize(m, mini_shape, order=1, mode="constant")
-        mini_mask[:, :, i] = np.around(m).astype(np.bool)
+        mini_mask[:, :, i] = np.around(m).astype(np.bool_)
     return mini_mask
 
 
@@ -777,7 +777,7 @@ def expand_mask(bbox, mini_mask, image_shape):
         w = x2 - x1
         # Resize with bilinear interpolation
         m = skimage.transform.resize(m, (h, w), order=1, mode="constant")
-        mask[y1:y2, x1:x2, i] = np.around(m).astype(np.bool)
+        mask[y1:y2, x1:x2, i] = np.around(m).astype(np.bool_)
     return mask
 
 
@@ -797,10 +797,10 @@ def unmold_mask(mask, bbox, image_shape):
     threshold = 0.5
     y1, x1, y2, x2 = bbox
     mask = skimage.transform.resize(mask, (y2 - y1, x2 - x1), order=1, mode="constant")
-    mask = np.where(mask >= threshold, 1, 0).astype(np.bool)
+    mask = np.where(mask >= threshold, 1, 0).astype(np.bool_)
 
     # Put the mask in the right location.
-    full_mask = np.zeros(image_shape[:2], dtype=np.bool)
+    full_mask = np.zeros(image_shape[:2], dtype=np.bool_)
     full_mask[y1:y2, x1:x2] = mask
     return full_mask
 

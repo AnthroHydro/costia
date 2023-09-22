@@ -18,7 +18,10 @@ from skimage.measure import find_contours
 import matplotlib.pyplot as plt
 from matplotlib import patches,  lines
 from matplotlib.patches import Polygon
+from matplotlib import use as mpluse
 import IPython.display
+
+mpluse('agg')
 
 # Root directory of the project
 ROOT_DIR = os.path.abspath("../")

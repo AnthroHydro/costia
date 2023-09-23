@@ -8,7 +8,7 @@ import numpy as np
 
 class YOLO:
 
-    def __init__(self, version='yolov5', weights='best.pt', use_gpu=0):
+    def __init__(self, version='yolov5', weights='best.pt', use_gpu=1):
         """
         Description:
             initializes a new YOLO model

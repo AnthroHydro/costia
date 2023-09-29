@@ -35,7 +35,7 @@ class YOLO:
         Description:
             runs the input frame through an inference pass on the class's model
         Parameters:
-            frame (String)      : video frame to be processed and tracked
+            frame (Numpy array) : video frame to be processed and tracked
             slice (bool)        : whether the frame should be sliced via sahi for
                                   processing (note that this increases accuracy for
                                   detecting small objects, but increases inference time)

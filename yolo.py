@@ -8,7 +8,7 @@ import numpy as np
 
 class YOLO:
 
-    def __init__(self, version='yolov5', weights='best.pt', use_gpu=1):
+    def __init__(self, version='yolov5', weights='best.pt', use_gpu=0):
         """
         Description:
             initializes a new YOLO model
@@ -35,13 +35,13 @@ class YOLO:
         Description:
             runs the input frame through an inference pass on the class's model
         Parameters:
-            frame (Numpy array) : video frame to be processed and tracked
-            slice (bool)        : whether the frame should be sliced via sahi for
-                                  processing (note that this increases accuracy for
-                                  detecting small objects, but increases inference time)
+            frame (String)  : video frame to be processed and tracked
+            slice (bool)    : whether the frame should be sliced via sahi for
+                              processing (note that this increases accuracy for
+                              detecting small objects, but increases inference time)
         Returns:
-            List[Detections]    : list of norfair Detection objects for the results of
-                                  running the model on the input frame
+            List[Detections]: list of norfair Detection objects for the results of
+                              running the model on the input frame
         """
         if slice:
             results = get_sliced_prediction(
@@ -56,6 +56,28 @@ class YOLO:
             results = get_prediction(frame, self.model)
 
         return self._get_detections(results.object_prediction_list)
+        
+    def train(self):
+        """
+        Description:
+            TBD
+        Parameters:
+            TBD
+        Returns:
+            TBD
+        """
+        return
+        
+    def statistics(self, timestamps):
+        """
+        Description:
+            TBD
+        Parameters:
+            TBD
+        Returns:
+            TBD
+        """
+        return
         
         
     #adapted from https://github.com/tryolabs/norfair/blob/master/demos/sahi/src/demo.py
